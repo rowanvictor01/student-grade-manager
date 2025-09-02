@@ -1,7 +1,9 @@
-package src.main.java;
-
 public class ProcessInput {
     public static void process(int input) {
-        // will run other methods depending on input received
+        switch(input) {
+            case 1:
+                SetupSchool.setup();
+                break;
+        }
     }
 }

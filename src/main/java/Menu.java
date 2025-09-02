@@ -12,6 +12,8 @@ public class Menu {
         System.out.println("[5]Generate reports");
         System.out.println("[6]Import data");
         System.out.println("[7]Export data");
+        // option for deleting a student
+        // option for quitting program
     }
     
     public static int getSelection() {

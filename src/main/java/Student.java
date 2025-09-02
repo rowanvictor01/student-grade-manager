@@ -4,9 +4,9 @@ public class Student {
     private String name;
     private double avgGrade;
     private boolean hasHonors;
-    private ArrayList<StudentSubject> subjects = new ArrayList<StudentSubject>();
     private String section;
     private String gradeLevel;
+    private ArrayList<StudentSubject> subjects = new ArrayList<StudentSubject>();
 
     // constructor
     public Student(String initName, String initLevel, String initSection) {

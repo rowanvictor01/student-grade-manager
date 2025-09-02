@@ -2,9 +2,9 @@ import java.util.ArrayList;
 
 public class Section {
     private String name;
-    private int headCount = this.students.size();
-    private ArrayList<Student> students = new ArrayList<Student>();
-    
+    private int headCount;
+    ArrayList<Student> students = new ArrayList<Student>();
+
     // constructor
     public Section(String initName) {
         this.name = initName;
@@ -19,7 +19,12 @@ public class Section {
     public int getHeadCount() {
         return this.headCount;
     }
-    
+
+    // for every add/delete of student in a section
+    public void updateHeadCount() {
+        this.headCount = students.size();
+    }
+
     // name getter and setter
     public String getName() {
         return this.name;

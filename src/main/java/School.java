@@ -3,14 +3,14 @@ import java.util.ArrayList;
 public class School {
     private String name;
     private String type;
-    private ArrayList<GradeLevel> gradeLevels = new ArrayList<GradeLevel>();
+    ArrayList<GradeLevel> gradeLevels = new ArrayList<GradeLevel>();
     
     // constructor
     public School(String initName, String initType) {
         this.name = initName;
         this.type = initType;
     }
-    
+
     // add grade levels
     public void addGradeLevel(GradeLevel newGradeLevel) {
         gradeLevels.add(newGradeLevel);
@@ -19,7 +19,7 @@ public class School {
     // print levels
     public void printGradeLevels() {
         for(int i = 0; i <= gradeLevels.size() - 1; i++) {
-            System.out.println(gradeLevels.get(i));
+            System.out.println(gradeLevels.get(i).getLevel());
         }
     }
     

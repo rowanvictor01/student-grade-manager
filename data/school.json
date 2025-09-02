@@ -1,0 +1,289 @@
+{
+  "name": "Bageenus Academy",
+  "type": "Private",
+  "gradeLevels": [
+    {
+      "level": "Grade 7",
+      "sections": [
+        {
+          "name": "First",
+          "headCount": 0,
+          "students": []
+        }
+      ]
+    },
+    {
+      "level": "Grade 8",
+      "sections": [
+        {
+          "name": "First",
+          "headCount": 0,
+          "students": []
+        }
+      ]
+    },
+    {
+      "level": "Grade 9",
+      "sections": [
+        {
+          "name": "First",
+          "headCount": 1,
+          "students": [
+            {
+              "name": "Cecilio Esperanza III",
+              "avgGrade": 0.0,
+              "hasHonors": false,
+              "section": "First",
+              "gradeLevel": "Grade 9",
+              "subjects": [
+                {
+                  "subject": {
+                    "name": "Math",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Science",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "English",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "History",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Physical Education",
+                    "isMajor": false
+                  },
+                  "grade": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "Grade 10",
+      "sections": [
+        {
+          "name": "First",
+          "headCount": 0,
+          "students": []
+        }
+      ]
+    },
+    {
+      "level": "Grade 11",
+      "sections": [
+        {
+          "name": "First",
+          "headCount": 1,
+          "students": [
+            {
+              "name": "Roy Dela Rama",
+              "avgGrade": 0.0,
+              "hasHonors": false,
+              "section": "First",
+              "gradeLevel": "Grade 11",
+              "subjects": [
+                {
+                  "subject": {
+                    "name": "Math",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Science",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "English",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "History",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Physical Education",
+                    "isMajor": false
+                  },
+                  "grade": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "level": "Grade 12",
+      "sections": [
+        {
+          "name": "First",
+          "headCount": 3,
+          "students": [
+            {
+              "name": "Joy Santos",
+              "avgGrade": 0.0,
+              "hasHonors": false,
+              "section": "First",
+              "gradeLevel": "Grade 12",
+              "subjects": [
+                {
+                  "subject": {
+                    "name": "Math",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Science",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "English",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "History",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Physical Education",
+                    "isMajor": false
+                  },
+                  "grade": 0.0
+                }
+              ]
+            },
+            {
+              "name": "Junjun Valdez",
+              "avgGrade": 0.0,
+              "hasHonors": false,
+              "section": "First",
+              "gradeLevel": "Grade 12",
+              "subjects": [
+                {
+                  "subject": {
+                    "name": "Math",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Science",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "English",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "History",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Physical Education",
+                    "isMajor": false
+                  },
+                  "grade": 0.0
+                }
+              ]
+            },
+            {
+              "name": "Bogart Gallardo jr.",
+              "avgGrade": 0.0,
+              "hasHonors": false,
+              "section": "First",
+              "gradeLevel": "Grade 12",
+              "subjects": [
+                {
+                  "subject": {
+                    "name": "Math",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Science",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "English",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "History",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Physical Education",
+                    "isMajor": false
+                  },
+                  "grade": 0.0
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

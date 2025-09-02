@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class GradeLevel {
     private String level;
-    private ArrayList<Section> sections = new ArrayList<Section>();
+    ArrayList<Section> sections = new ArrayList<Section>();
     
     // constructor
     public GradeLevel(String initLevel) {
@@ -17,7 +17,7 @@ public class GradeLevel {
     // print sections in a grade level
     public void printSections() {
         for(int i = 0; i <= this.sections.size() - 1; i++) {
-            System.out.println(this.sections.get(i));
+            System.out.println(this.sections.get(i).getName());
         }
     }
     

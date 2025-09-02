@@ -5,14 +5,14 @@ public class Student {
     private double avgGrade;
     private boolean hasHonors;
     private ArrayList<StudentSubject> subjects = new ArrayList<StudentSubject>();
-    private Section section;
-    private GradeLevel gradeLevel;
+    private String section;
+    private String gradeLevel;
 
     // constructor
-    public Student(String initName, double initAvgGrade, boolean initHasHonors) {
+    public Student(String initName, String initLevel, String initSection) {
         this.name = initName;
-        this.avgGrade = initAvgGrade;
-        this.hasHonors = initHasHonors;
+        this.section = initSection;
+        this.gradeLevel = initLevel;
     }
     
     // add a subject to subjects array list
@@ -41,11 +41,11 @@ public class Student {
         return this.hasHonors;
     }
     
-    public Section getSection() {
+    public String getSection() {
         return this.section;
     }
     
-    public GradeLevel getGradeLevel() {
+    public String getGradeLevel() {
         return this.gradeLevel;
     }
     
@@ -63,11 +63,11 @@ public class Student {
         this.hasHonors = newHasHonors;
     }
     
-    public void setSection(Section newSection) {
+    public void setSection(String newSection) {
         this.section = newSection;
     }
     
-    public void setGradeLevel(GradeLevel newGradeLevel) {
+    public void setGradeLevel(String newGradeLevel) {
         this.gradeLevel = newGradeLevel;
     }
 }

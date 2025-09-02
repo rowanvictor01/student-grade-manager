@@ -5,6 +5,6 @@ public class MainApp {
         Menu.displayMenu();
         int userSelected = Menu.getSelection();
         
-        System.out.println(userSelected);
+        ProcessInput.process(userSelected);
     }
 }

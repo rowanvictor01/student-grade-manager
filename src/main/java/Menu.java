@@ -7,8 +7,8 @@ public class Menu {
         System.out.println("\nWelcome to the Student Grade Management System!");
         System.out.println("[1]Set up school structure");
         System.out.println("[2]Add new student");
-        System.out.println("[3]Edit existing student");
-        System.out.println("[4]Update student grades");
+        System.out.println("[3]Edit existing student");  // edits student's name, grade level, and section
+        System.out.println("[4]Update student grades");  // edits student's avg, check if honors, and subject grades
         System.out.println("[5]Generate reports");
         System.out.println("[6]Import data");
         System.out.println("[7]Export data");

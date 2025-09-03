@@ -9,6 +9,8 @@ public class Section {
     public Section(String initName) {
         this.name = initName;
     }
+
+    public Section() {}
     
     // add student to students
     public void addStudent(Student newStudent) {

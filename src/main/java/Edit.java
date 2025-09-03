@@ -19,6 +19,40 @@ public class Edit {
     private static final Gson gson = new Gson();
     private static final Gson gsonWrite = new GsonBuilder().setPrettyPrinting().create();
 
+    // helper method for finding section
+    public static int findGradeLevelIndex(Student student, School schoolObj) throws IllegalArgumentException {
+        int gradeLevelIndex = 0;
+
+        // checks student's grade level based on what's set on their field
+        for(int i = 0; i < schoolObj.gradeLevels.size(); i++) {
+            if(Objects.equals(student.getGradeLevel(), schoolObj.gradeLevels.get(i).getLevel())) {
+                gradeLevelIndex = schoolObj.gradeLevels.indexOf(schoolObj.gradeLevels.get(i));
+                return gradeLevelIndex;
+            }
+        }
+        throw new IllegalArgumentException("Grade level not found");
+    }
+
+    public static Section findSection(Student student, School schoolObj) throws IllegalArgumentException {
+        int gradeLevelIndex = 0;
+        try {
+            gradeLevelIndex = findGradeLevelIndex(student, schoolObj);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error: " + e.getMessage());
+        }
+
+        ArrayList<Section> sections = schoolObj.gradeLevels.get(gradeLevelIndex).sections;
+
+        // checks student's section based on what's set on their field
+        for (int i = 0; i < sections.size(); i++) {
+            if(Objects.equals(sections.get(i).getName(), student.getSection())) {
+                System.out.println("Section Found!");
+                return sections.get(i);
+            }
+        }
+        throw new IllegalArgumentException("Section not found");
+    }
+
     public static void createStudent() {
         // read json file
         School schoolData;
@@ -67,6 +101,7 @@ public class Edit {
         storeStudent(newStudent, schoolData);
     }
 
+    // always use on top of methods to update their school data
     public static School getJsonData() throws IOException {
         try(FileReader reader = new FileReader("data/school.json")) {
             School jsonData = gson.fromJson(reader, School.class);
@@ -79,31 +114,49 @@ public class Edit {
     }
 
     public static void storeStudent(Student student, School schoolObj) {
-        int gradeLevelIndex = 0;
+        Section section = new Section();
+        try {
+            section = findSection(student, schoolObj);
+        } catch (IllegalArgumentException e) {
+            System.err.println("Error: " + e.getMessage());
+            return;
+        }
+        section.addStudent(student);
 
-        for(int i = 0; i < schoolObj.gradeLevels.size(); i++) {
-            if(Objects.equals(student.getGradeLevel(), schoolObj.gradeLevels.get(i).getLevel())) {
-                gradeLevelIndex = schoolObj.gradeLevels.indexOf(schoolObj.gradeLevels.get(i));
-            }
+        try (FileWriter writer = new FileWriter("data/school.json")) {
+            section.updateHeadCount();
+            gsonWrite.toJson(schoolObj, writer);
+        }
+        catch (IOException e) {
+            System.err.println("\n Failed to add student\n" + e);
+        }
+    }
+
+    public static Student findStudent() throws IOException {
+        /*
+        since multiple methods are using the same procedure
+        to get updated school data, might be good to write a method for it
+        */
+
+        School schoolData;
+        try {
+            schoolData = getJsonData();
+        } catch (IOException e) {
+            throw new IOException("Failed to get latest school data");
         }
 
-        ArrayList<Section> sections = schoolObj.gradeLevels.get(gradeLevelIndex).sections;
+        System.out.print("Enter student name >> ");
+        String name = scanner.nextLine().trim();
 
-        for (int i = 0; i <= sections.size() - 1 ; i++) {
-            if(Objects.equals(sections.get(i).getName(), student.getSection())) {
-                System.out.println("Section Found!");
-                sections.get(i).addStudent(student);
-
-                try (FileWriter writer = new FileWriter("data/school.json")) {
-                    sections.get(i).updateHeadCount();
-                    gsonWrite.toJson(schoolObj, writer);
-                }
-                catch (IOException e) {
-                    System.err.println("\n Failed to add student\n" + e);
-                }
-                return;
-            }
-        }
-        System.out.println("Section not found");
+       for(int i = 0; i < schoolData.gradeLevels.size(); i++) {
+           for(int j = 0; j < schoolData.gradeLevels.get(i).sections.size(); j++) {
+               for(int k = 0; k < schoolData.gradeLevels.get(i).sections.get(j).students.size(); k++) {
+                   if(Objects.equals(name, schoolData.gradeLevels.get(i).sections.get(j).students.get(k).getName())) {
+                       return schoolData.gradeLevels.get(i).sections.get(j).students.get(k);
+                   }
+               }
+           }
+       }
+        throw new IOException("Student not found");
     }
 }

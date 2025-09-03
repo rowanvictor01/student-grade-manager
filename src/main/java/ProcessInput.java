@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.Path;
@@ -14,6 +15,14 @@ public class ProcessInput {
                     return;
                 }
                 Edit.createStudent();
+                break;
+            case 3:
+                // trying out method .findStudent
+                try {
+                    System.out.println(Edit.findStudent().getGradeLevel());
+                } catch (IOException e) {
+                    System.err.println("Error: " + e.getMessage());
+                }
                 break;
         }
     }

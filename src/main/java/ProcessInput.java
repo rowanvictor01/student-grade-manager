@@ -17,12 +17,11 @@ public class ProcessInput {
                 Edit.createStudent();
                 break;
             case 3:
-                // trying out method .findStudent
-                try {
-                    System.out.println(Edit.findStudent().getGradeLevel());
-                } catch (IOException e) {
-                    System.err.println("Error: " + e.getMessage());
+                if(!checkJsonExists()) {
+                    System.out.println("No config file yet. Please create one first!");
+                    return;
                 }
+                Edit.editStudentDetails();
                 break;
         }
     }

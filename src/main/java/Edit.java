@@ -5,6 +5,7 @@ import com.google.gson.GsonBuilder;
 import java.io.IOException;
 import java.io.FileWriter;
 import java.io.FileReader;
+import java.util.InputMismatchException;
 import java.util.Objects;
 import java.util.Scanner;
 import java.util.regex.Pattern;
@@ -60,7 +61,7 @@ public class Edit {
             schoolData = getJsonData();
         }
         catch (IOException e) {
-            System.out.println(e.getMessage());
+            System.err.println(e.getMessage());
             return;
         }
 
@@ -132,18 +133,11 @@ public class Edit {
         }
     }
 
-    public static Student findStudent() throws IOException {
+    public static Student findStudent(School schoolData) throws IOException {
         /*
         since multiple methods are using the same procedure
         to get updated school data, might be good to write a method for it
         */
-
-        School schoolData;
-        try {
-            schoolData = getJsonData();
-        } catch (IOException e) {
-            throw new IOException("Failed to get latest school data");
-        }
 
         System.out.print("Enter student name >> ");
         String name = scanner.nextLine().trim();
@@ -158,5 +152,84 @@ public class Edit {
            }
        }
         throw new IOException("Student not found");
+    }
+
+    public static void editStudentDetails() {
+        School schoolData;
+        try {
+            schoolData = getJsonData();
+        } catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+            return;
+        }
+
+        Student student;
+        int editOption;
+        try {
+            student = findStudent(schoolData);
+        }
+        catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+            return;
+        }
+
+        while(true) {
+            System.out.println("\nStudent's Information:");
+            System.out.println("[1]Name: " + student.getName());
+            System.out.println("[2]Grade Level & Section: " + student.getGradeLevel() + ", " + student.getSection());
+            System.out.print("Enter the option's number for editing >> ");
+
+            try {
+                editOption = scanner.nextInt();
+                scanner.nextLine();
+                break;
+            }
+            catch (InputMismatchException e) {
+                System.err.println("Failed to capture input: " + e.getMessage());
+                System.err.println("Select input based on the displayed options!");
+            }
+        }
+
+        switch (editOption) {
+            case 1:
+                System.out.print("Enter new name >> ");
+                String newName = scanner.nextLine().trim();
+                student.setName(newName);
+                break;
+            case 2:
+                // delete student in section first before getting new details
+                Section section;
+                try {
+                    section = findSection(student, schoolData);
+                } catch (IllegalArgumentException e) {
+                    System.err.println("Error: " + e.getMessage());
+                    return;
+                }
+                section.deleteStudent(student);
+                section.updateHeadCount();
+
+                // get new grade level and section from user
+                System.out.print("Enter new grade level >> Grade: ");
+                String newLevel = scanner.nextLine().trim();
+                student.setGradeLevel("Grade " + newLevel);
+
+                System.out.print("Enter student's new assigned section name >> ");
+                String newSection = scanner.nextLine().trim();
+                student.setSection(newSection);
+                break;
+            default:
+                System.out.println("Error: Input not from the options");
+        }
+
+        storeStudent(student, schoolData);
+
+        try (FileWriter writer = new FileWriter("data/school.json")) {
+            // section.updateHeadCount();
+            gsonWrite.toJson(schoolData, writer);
+            System.out.println("Changes Saved");
+        }
+        catch (IOException e) {
+            System.err.println("Failed to save changes: " + e.getMessage());
+        }
     }
 }

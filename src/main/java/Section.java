@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Section {
     private String name;
@@ -15,6 +16,16 @@ public class Section {
     // add student to students
     public void addStudent(Student newStudent) {
         students.add(newStudent);
+    }
+
+    // remove student to students
+    public void deleteStudent(Student student) {
+        for(int i = 0; i < students.size(); i++) {
+            if(Objects.equals(student.getName(), students.get(i).getName())) {
+                students.remove(i);
+                return;
+            }
+        }
     }
     
     // headCount getter

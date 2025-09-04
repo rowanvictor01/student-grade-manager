@@ -6,7 +6,7 @@ public class Student {
     private boolean hasHonors;
     private String section;
     private String gradeLevel;
-    private ArrayList<StudentSubject> subjects = new ArrayList<StudentSubject>();
+    private final ArrayList<StudentSubject> subjects = new ArrayList<StudentSubject>();
 
     // constructor
     public Student(String initName, String initLevel, String initSection) {
@@ -14,7 +14,7 @@ public class Student {
         this.section = initSection;
         this.gradeLevel = initLevel;
     }
-    
+
     // add a subject to subjects array list
     public void addSubject(Subject newSubject, double grade) {
         subjects.add(new StudentSubject(newSubject, grade));
@@ -48,7 +48,7 @@ public class Student {
     public String getGradeLevel() {
         return this.gradeLevel;
     }
-    
+
 
     // setters
     public void setName(String newName) {

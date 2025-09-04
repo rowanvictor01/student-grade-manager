@@ -7,8 +7,97 @@
       "sections": [
         {
           "name": "First",
-          "headCount": 0,
-          "students": []
+          "headCount": 2,
+          "students": [
+            {
+              "name": "Borloloy Lots",
+              "avgGrade": 0.0,
+              "hasHonors": false,
+              "section": "First",
+              "gradeLevel": "Grade 7",
+              "subjects": [
+                {
+                  "subject": {
+                    "name": "Math",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Science",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "English",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "History",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Physical Education",
+                    "isMajor": false
+                  },
+                  "grade": 0.0
+                }
+              ]
+            },
+            {
+              "name": "Joy Santos",
+              "avgGrade": 0.0,
+              "hasHonors": false,
+              "section": "First",
+              "gradeLevel": "Grade 7",
+              "subjects": [
+                {
+                  "subject": {
+                    "name": "Math",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Science",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "English",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "History",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Physical Education",
+                    "isMajor": false
+                  },
+                  "grade": 0.0
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -17,8 +106,53 @@
       "sections": [
         {
           "name": "First",
-          "headCount": 0,
-          "students": []
+          "headCount": 1,
+          "students": [
+            {
+              "name": "Borloloy Lots",
+              "avgGrade": 0.0,
+              "hasHonors": false,
+              "section": "First",
+              "gradeLevel": "Grade 7",
+              "subjects": [
+                {
+                  "subject": {
+                    "name": "Math",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Science",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "English",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "History",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Physical Education",
+                    "isMajor": false
+                  },
+                  "grade": 0.0
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -27,10 +161,54 @@
       "sections": [
         {
           "name": "First",
-          "headCount": 1,
+          "headCount": 2,
           "students": [
             {
               "name": "Cecilio Esperanza III",
+              "avgGrade": 0.0,
+              "hasHonors": false,
+              "section": "First",
+              "gradeLevel": "Grade 9",
+              "subjects": [
+                {
+                  "subject": {
+                    "name": "Math",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Science",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "English",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "History",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Physical Education",
+                    "isMajor": false
+                  },
+                  "grade": 0.0
+                }
+              ]
+            },
+            {
+              "name": "Junjun Valdez",
               "avgGrade": 0.0,
               "hasHonors": false,
               "section": "First",
@@ -92,10 +270,54 @@
       "sections": [
         {
           "name": "First",
-          "headCount": 1,
+          "headCount": 2,
           "students": [
             {
               "name": "Roy Dela Rama",
+              "avgGrade": 0.0,
+              "hasHonors": false,
+              "section": "First",
+              "gradeLevel": "Grade 11",
+              "subjects": [
+                {
+                  "subject": {
+                    "name": "Math",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Science",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "English",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "History",
+                    "isMajor": true
+                  },
+                  "grade": 0.0
+                },
+                {
+                  "subject": {
+                    "name": "Physical Education",
+                    "isMajor": false
+                  },
+                  "grade": 0.0
+                }
+              ]
+            },
+            {
+              "name": "Roy Dela Cruz",
               "avgGrade": 0.0,
               "hasHonors": false,
               "section": "First",
@@ -147,96 +369,8 @@
       "sections": [
         {
           "name": "First",
-          "headCount": 3,
+          "headCount": 1,
           "students": [
-            {
-              "name": "Joy Santos",
-              "avgGrade": 0.0,
-              "hasHonors": false,
-              "section": "First",
-              "gradeLevel": "Grade 12",
-              "subjects": [
-                {
-                  "subject": {
-                    "name": "Math",
-                    "isMajor": true
-                  },
-                  "grade": 0.0
-                },
-                {
-                  "subject": {
-                    "name": "Science",
-                    "isMajor": true
-                  },
-                  "grade": 0.0
-                },
-                {
-                  "subject": {
-                    "name": "English",
-                    "isMajor": true
-                  },
-                  "grade": 0.0
-                },
-                {
-                  "subject": {
-                    "name": "History",
-                    "isMajor": true
-                  },
-                  "grade": 0.0
-                },
-                {
-                  "subject": {
-                    "name": "Physical Education",
-                    "isMajor": false
-                  },
-                  "grade": 0.0
-                }
-              ]
-            },
-            {
-              "name": "Junjun Valdez",
-              "avgGrade": 0.0,
-              "hasHonors": false,
-              "section": "First",
-              "gradeLevel": "Grade 12",
-              "subjects": [
-                {
-                  "subject": {
-                    "name": "Math",
-                    "isMajor": true
-                  },
-                  "grade": 0.0
-                },
-                {
-                  "subject": {
-                    "name": "Science",
-                    "isMajor": true
-                  },
-                  "grade": 0.0
-                },
-                {
-                  "subject": {
-                    "name": "English",
-                    "isMajor": true
-                  },
-                  "grade": 0.0
-                },
-                {
-                  "subject": {
-                    "name": "History",
-                    "isMajor": true
-                  },
-                  "grade": 0.0
-                },
-                {
-                  "subject": {
-                    "name": "Physical Education",
-                    "isMajor": false
-                  },
-                  "grade": 0.0
-                }
-              ]
-            },
             {
               "name": "Bogart Gallardo jr.",
               "avgGrade": 0.0,

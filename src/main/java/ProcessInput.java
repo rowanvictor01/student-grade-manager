@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.Path;
@@ -14,6 +15,13 @@ public class ProcessInput {
                     return;
                 }
                 Edit.createStudent();
+                break;
+            case 3:
+                if(!checkJsonExists()) {
+                    System.out.println("No config file yet. Please create one first!");
+                    return;
+                }
+                Edit.editStudentDetails();
                 break;
         }
     }

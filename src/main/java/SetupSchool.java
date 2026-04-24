@@ -13,10 +13,10 @@ import java.nio.file.Paths;
 public class SetupSchool {
     private static final Scanner scanner = new Scanner(System.in);
     private static final Pattern typePattern = Pattern.compile("private|public", Pattern.CASE_INSENSITIVE);
-    public static void setup() {
+    public static int setup() {
         if(doesJsonExists()) {
             System.out.println("A json file has already been initialized");
-            return;
+            return 0;
         }
 
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
@@ -37,6 +37,8 @@ public class SetupSchool {
         catch (IOException e) {
             e.printStackTrace();
         }
+
+        return 1;
     }
     
     public static School getUserInput() {

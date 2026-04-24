@@ -7,7 +7,8 @@ public class ProcessInput {
     public static void process(int input) {
         switch(input) {
             case 1:
-                SetupSchool.setup();
+                // returns 1 if file was created successfully, 0 otherwise
+                int ret = SetupSchool.setup();
                 break;
             case 2:
                 if(!checkJsonExists()) {
@@ -23,7 +24,14 @@ public class ProcessInput {
                 }
                 Edit.editStudentDetails();
                 break;
+            case 4:
+                if(!checkJsonExists()) {
+                    System.out.println("No config file yet. Please create one first!");
+                    return;
+                }
+                Edit.editStudentGrades();
         }
+
     }
 
     public static boolean checkJsonExists() {

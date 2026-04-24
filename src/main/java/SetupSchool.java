@@ -1,5 +1,7 @@
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+
+import java.io.File;
 import java.io.IOException;
 import java.io.FileWriter;
 import java.util.Scanner;
@@ -29,10 +31,21 @@ public class SetupSchool {
         for(int i = 0; i <= manufactured.size() - 1; i++) {
             mySchool.addGradeLevel(manufactured.get(i));
         }
-        
-        
+
+        // Create data/ dir if it doesn't exist yet
+        File dir = new File("data/");
+
+        if(dir.mkdir()) {
+            System.out.println("The 'data' directory has been successfully created.");
+        }
+        else {
+            System.out.println("Failed to create the 'data' directory.");
+        }
+
+        // Creates the .json file
         try (FileWriter writer = new FileWriter("data/school.json")) {
             gson.toJson(mySchool, writer);
+            System.out.println("The data/school.json file has been successfully created.");
         }
         catch (IOException e) {
             e.printStackTrace();

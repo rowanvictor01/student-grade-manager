@@ -80,13 +80,11 @@ public class Edit {
         System.out.print("Student's name >> ");
         String name = scanner.nextLine().trim();
 
-        // refactor into a helper method
         System.out.println("\nGrade Levels:");
         schoolData.printGradeLevels();
         System.out.print("Grade Level >> ");
         String level = scanner.nextLine();
 
-        // refactor into a helper method
         System.out.println("\nSections:");
         schoolData.gradeLevels.get(0).printSections();
         System.out.print("Section >> ");
@@ -152,6 +150,24 @@ public class Edit {
            }
        }
         throw new IOException("Student not found");
+    }
+
+    public static StudentSubject findSubject(School schoolData) throws IOException {
+        System.out.print("Enter subject >> ");
+        String name = scanner.nextLine().trim();
+
+        for(int i = 0; i < schoolData.gradeLevels.size(); i++) {
+            for(int j = 0; j < schoolData.gradeLevels.get(i).sections.size(); j++) {
+                for(int k = 0; k < schoolData.gradeLevels.get(i).sections.get(j).students.size(); k++) {
+                    for(int l = 0; l < schoolData.gradeLevels.get(i).sections.get(j).students.get(k).subjects.size(); l++) {
+                        if(Objects.equals(name, schoolData.gradeLevels.get(i).sections.get(j).students.get(k).subjects.get(l).getSubject().getName())) {
+                            return schoolData.gradeLevels.get(i).sections.get(j).students.get(k).subjects.get(l);
+                        }
+                    }
+                }
+            }
+        }
+        throw new IOException("Subject not found");
     }
 
     public static void editStudentDetails() {
@@ -230,6 +246,70 @@ public class Edit {
         }
         catch (IOException e) {
             System.err.println("Failed to save changes: " + e.getMessage());
+        }
+    }
+
+    public static void editStudentGrades() {
+        School schoolData;
+        try {
+            schoolData = getJsonData();
+        }
+        catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+            return;
+        }
+
+        Student student;
+        try {
+            student = findStudent(schoolData);
+        }
+        catch (IOException e) {
+            System.err.println("Error: " + e.getMessage());
+            return;
+        }
+
+        System.out.println("\nStudent's subject grades:");
+        student.printSubjects();
+
+        StudentSubject subject;
+        try {
+            subject = findSubject(schoolData);
+        }
+        catch(IOException e) {
+            System.err.println("Error: " + e.getMessage());
+            return;
+        }
+
+
+        /*
+        System.out.print("\nSelect the subject to be updated >> ");
+        String inputSubject = scanner.nextLine().trim();
+         */
+
+        System.out.print("\nEnter the new grade >> ");
+        double newGrade = scanner.nextDouble();
+
+        subject.setGrade(newGrade);
+
+        /*
+        for(int i = 0; i < student.subjects.size(); i++) {
+            // print out all of student's subjects with grades
+            // can modify printSubjects in Student Class to take in input to print together with subjects
+
+            if(Objects.equals(subject.getSubject().getName(), inputSubject)) {
+                student.subjects.get(i).setGrade(newGrade);
+            }
+        }
+         */
+
+        student.printSubjects();
+        System.out.println("Change has been made successfully!");
+
+        try (FileWriter writer = new FileWriter("data/school.json")) {
+            gsonWrite.toJson(schoolData, writer);
+        }
+        catch (IOException e) {
+            System.err.println("\n Failed to write changes to file\n" + e);
         }
     }
 }

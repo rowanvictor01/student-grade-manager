@@ -6,7 +6,7 @@ public class Student {
     private boolean hasHonors;
     private String section;
     private String gradeLevel;
-    private final ArrayList<StudentSubject> subjects = new ArrayList<StudentSubject>();
+    public final ArrayList<StudentSubject> subjects = new ArrayList<StudentSubject>();
 
     // constructor
     public Student(String initName, String initLevel, String initSection) {
@@ -23,7 +23,9 @@ public class Student {
     // print subjects elements
     public void printSubjects() {
         for(int i = 0; i <= subjects.size() - 1; i++) {
-            System.out.println(this.subjects.get(i));
+            System.out.println(this.subjects.get(i).getSubject().getName());
+            System.out.println(this.subjects.get(i).getGrade());
+            System.out.println();
         }
     }
     
@@ -40,15 +42,14 @@ public class Student {
     public boolean getHasHonors() {
         return this.hasHonors;
     }
-    
+
     public String getSection() {
         return this.section;
     }
-    
+
     public String getGradeLevel() {
         return this.gradeLevel;
     }
-
 
     // setters
     public void setName(String newName) {
@@ -62,11 +63,11 @@ public class Student {
     public void setHasHonors(boolean newHasHonors) {
         this.hasHonors = newHasHonors;
     }
-    
+
     public void setSection(String newSection) {
         this.section = newSection;
     }
-    
+
     public void setGradeLevel(String newGradeLevel) {
         this.gradeLevel = newGradeLevel;
     }

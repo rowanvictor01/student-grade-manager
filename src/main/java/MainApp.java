@@ -1,10 +1,20 @@
-// create one array that has all of the subject objects and loop through that and feed to the .addSubject method in the Student class
 
 public class MainApp {
     public static void main(String[] args) {
-        Menu.displayMenu();
-        int userSelected = Menu.getSelection();
-        
-        ProcessInput.process(userSelected);
+
+        while(true) {
+
+            Menu.displayMenu();
+            int userSelected = Menu.getSelection();
+
+            // 5 is the menu option to exit program
+            if(userSelected == 5) {
+                break;
+            }
+
+            ProcessInput.process(userSelected);
+
+        }
+
     }
 }
